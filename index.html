@@ -6,63 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        HTML, BODY {
-            height: 100%;
-        }
-
-        BODY {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            /*background: #000;*/
-            font: 25vmax/1 Arial Black, sans-serif;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .text {
-            white-space: nowrap;
-            filter: url(#filter);
-            outline: none;
-
-        &::selection {
-             background: rgba(0,0,0,.15);
-         }
-        }
-
-        svg {
-            position: absolute;
-            width: 0;
-            height: 0;
-        }
-    </style>
 </head>
 <body>
 hello liduancheng
-<div style="display: none">
-    <svg>
-        <filter id="filter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.035 0.008" numOctaves="1" seed="2" stitchTiles="stitch" result="turbulence">
-                <animate attributeName="seed" values="1;3;5;7;9;11;13;15;17;19;21" dur="1.5s" repeatCount="indefinite"/>
-            </feTurbulence>
-            <feTurbulence type="fractalNoise" baseFrequency="0.035 0.007" numOctaves="1" seed="1" stitchTiles="stitch" result="turbulence1"/>
-            <feMerge result="merge">
-                <feMergeNode in="turbulence1" result="mergeNode"/>
-                <feMergeNode in="turbulence" result="mergeNode1"/>
-            </feMerge>
-            <feColorMatrix type="saturate" values="9" in="merge" result="colormatrix"/>
-            <feColorMatrix type="matrix" values="1 0 0 0 0
-  0 1 0 0 0
-  0 0 1 0 0
-  0 0 0 10 0" in="colormatrix" result="colormatrix1"/>
-            <feDisplacementMap in="colormatrix1" in2="colormatrix" scale="40" xChannelSelector="R" yChannelSelector="G" result="displacementMap"/>
-            <feComposite in="displacementMap" in2="SourceAlpha" operator="in" result="composite1"/>
-        </filter>
-</div>
-</svg>
-
-<div class="text" contenteditable spellcheck="false">Flame</div>
 </body>
 </html>
