@@ -14,30 +14,79 @@
 </head>
 <body>
 <div class="cus_link">
-    <h3>可能适合的工作</h3>
-    <div id="acon"></div>
+    <div style="color:#fff;background: red;">需要自己鉴别工作的真实性，以及安全性</div>
+    首先上去注册一个账号，然后填写必要信息，不过实习可能比较少
+    <h3>工作</h3>
+    <div id="website"></div>
     <h3>国家信用公示系统</h3>
     <a href="https://m.tianyancha.com" target="_blank">天眼查</a>
     <a href="http://www.gsxt.gov.cn/index.html" target="_blank">信用公示系统</a>
-    <h3>另外网站</h3>
+    <h3>关键词，大致方向</h3>
+    <p>
+        <span>天猫淘宝运营，代运营</span> <br>
+        <span>美工， ui</span> <br>
+        <span>招聘， 找工作</span> <br>
+        <span>搜索引擎， baidu</span> <br>
+        <span>实习</span>
+    </p>
 </div>
 <script>
-    var json = [
-        {
-            link: "https://www.zhipin.com/c101280100-p140101/?ka=position-140101",
-            name: "boss直聘"
-        },
-        {
-            name: "道一科技",
-            link: "https://www.zhipin.com/job_detail/46aa943ef96140c81XR53Nu_GFE~.html?ka=job_list_10_blank&lid=14dFWLqfPO9.search"
-        }
-    ]
-    var div = document.createElement("div")
-    var str = ""
-    for(var i=0;i<json.length;i++) {
-        str += "<a href='"+json[i].link+"' target='_blank'>"+json[i].name+"</a>"
+    var json = {
+        website: [
+            {
+                name: "boss直招聘",
+                link: "https://www.zhipin.com/job_detail/?query=%E7%BE%8E%E5%B7%A5&scity=101280100&industry=&position=140101"
+            },
+            {
+                name: "58招聘",
+                link: "http://gz.58.com/job/?key=ui&final=1&jump=1"
+            },
+            {
+                name:"前程无忧",
+                link: "https://m.51job.com/search/joblist.php?keyword=ui&keywordtype=2"
+            },
+            {
+                name: "前程无忧-美工",
+                link:"https://m.51job.com/search/joblist.php?keyword=%E7%BE%8E%E5%B7%A5&keywordtype=2&jobarea=&landmark=&issuedate=&saltype=&degree=&funtype=&indtype=&jobterm=&cotype=&workyear=&cosize=&lonlat=&tubename=&tubeline=&radius="
+            },
+            {
+                name: "赶集网-ui",
+                link:"http://gz.ganji.com/zhaopin/s/_ui/?from=zhaopin_indexpage"
+            },
+            {
+                name: "lagou",
+                link:"https://m.lagou.com/search.html"
+            },
+            {
+                name:"ciwei 实习",
+                link:"http://www.ciweishixi.com/search?key=ui&page=3"
+            },
+            {
+                name: "应届生求职",
+                link: "http://m.yingjiesheng.com/result.php?city=1085&word=ui&stype=0&do=1"
+            },
+            {
+                name: "招聘网站汇总",
+                link: "http://m.hao123.com/m/zhaopin?idfrom=pc"
+            }
+        ],
+        job: [
+            {
+                link: "https://www.zhipin.com/c101280100-p140101/?ka=position-140101",
+                name: "boss直聘"
+            },
+            {
+                name: "道一科技",
+                link: "https://www.zhipin.com/job_detail/46aa943ef96140c81XR53Nu_GFE~.html?ka=job_list_10_blank&lid=14dFWLqfPO9.search"
+            }
+        ]
     }
-    document.getElementById("acon").innerHTML = str;
-</script>
+    var str = ""
+    var webiste = ""
+    for(var i=0;i<json.website.length;i++) {
+        website += "<a href='"+json.website[i].link+"' target='_blank'>"+json.website[i].name+"</a>"
+    }
+    document.getElementById("website").innerHTML = website
+            </script>
 </body>
 </html>
