@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cus_link  a {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="cus_link">
+    <h3>可能适合的工作</h3>
+    <div id="acon"></div>
+    <h3>国家信用公示系统</h3>
+    <a href="https://m.tianyancha.com" target="_blank">天眼查</a>
+    <a href="http://www.gsxt.gov.cn/index.html" target="_blank">信用公示系统</a>
+    <h3>另外网站</h3>
+</div>
+<script>
+    var json = [
+        {
+            link: "https://www.zhipin.com/c101280100-p140101/?ka=position-140101",
+            name: "boss直聘"
+        },
+        {
+            name: "道一科技",
+            link: "https://www.zhipin.com/job_detail/46aa943ef96140c81XR53Nu_GFE~.html?ka=job_list_10_blank&lid=14dFWLqfPO9.search"
+        }
+    ]
+    var div = document.createElement("div")
+    var str = ""
+    for(var i=0;i<json.length;i++) {
+        str += "<a href='"+json[i].link+"' target='_blank'>"+json[i].name+"</a>"
+    }
+    document.getElementById("acon").innerHTML = str;
+</script>
+</body>
+</html>
